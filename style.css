@@ -1,60 +1,61 @@
-#form_country {
-    display: none;
-}
+/*#form_country {*/
+/*    display: none;*/
+/*}*/
 
-.form_widget {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 400px;
-}
+/*.form_widget {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    flex-direction: column;*/
+/*    width: 400px;*/
+/*}*/
 
-.form_widget > .input_field {
-    margin: 10px 0 10px 0;
-    display: flex;
-    border-radius: 7px;
-    border: 1px solid gray;
-    height: 40px;
-    padding-left: 10px;
-}
+/*.form_widget > .input_field {*/
+/*    margin: 10px 0 10px 0;*/
+/*    display: flex;*/
+/*    border-radius: 7px;*/
+/*    border: 1px solid gray;*/
+/*    height: 40px;*/
+/*    padding-left: 10px;*/
+/*}*/
 
-.name_wrapper {
-    display: flex;
-    justify-content: space-between;
-}
+/*.name_wrapper {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
 
-.name_wrapper > input {
-    border-radius: 7px;
-    border: 1px solid gray;
-    height: 40px;
-    padding-left: 10px;
-}
+/*.name_wrapper > input {*/
+/*    border-radius: 7px;*/
+/*    border: 1px solid gray;*/
+/*    height: 40px;*/
+/*    padding-left: 10px;*/
+/*}*/
 
-.pass_wrapper {
-    display: flex;
-    justify-content: space-between;
-}
+/*.pass_wrapper {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
 
-.pass_wrapper > input {
-    border-radius: 7px;
-    border: 1px solid gray;
-    height: 40px;
-    padding-left: 10px;
-}
+/*.pass_wrapper > input {*/
+/*    border-radius: 7px;*/
+/*    border: 1px solid gray;*/
+/*    height: 40px;*/
+/*    padding-left: 10px;*/
+/*}*/
 
-.submit_btn {
-    display: none;
-!important;
-    border: 1px solid black;
-    background: rebeccapurple;
-    color: white;
-    font-weight: 900;
-}
+/*.submit_btn {*/
+/*    display: none;*/
+/*!important;*/
+/*    border: 1px solid black;*/
+/*    background: rebeccapurple;*/
+/*    color: white;*/
+/*    font-weight: 900;*/
+/*}*/
 
-.submit_btn.active {
-    display: block;
-    border: 1px solid black;
-    background: greenyellow;
-    color: white;
-    font-weight: 900;
-}
+/*.submit_btn.active {*/
+/*    display: flex;*/
+/*    border: 1px solid black;*/
+/*    background: greenyellow;*/
+/*    border-radius: 10px;*/
+/*    color: red;*/
+/*    font-weight: 900;*/
+/*}*/

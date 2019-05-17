@@ -130,6 +130,9 @@ window.addEventListener("load", function () {
             success: function (data) {
                 var res_data = JSON.parse(data);
                 $('#results').html(JSON.stringify(res_data.error));
+                if (res_data.error !== null) {
+                    alert('there is error')
+                }
                 console.log(res_data.error);
             },
             error: function (xhr, str) {
