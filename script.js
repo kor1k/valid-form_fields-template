@@ -6,19 +6,43 @@ scriptAdd.crossOrigin = 'anonymous';
 document.getElementsByTagName('head')[0].appendChild(scriptAdd);
 
 window.addEventListener("load", function () {
-    $('.widgetRegForm').html('<form id="form_widget" method="post" action="javascript:void(0)">\n' +
-        '    <input name="firstName" required pattern="^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$" id="form_name" placeholder="Name" type="text">\n' +
-        '    <input name="lastName" required pattern="^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$" id="form_last_name" placeholder="Last Name" type="text">\n' +
-        '    <input name="phone" required pattern="^\\d{10}$" minlength="10" id="form_phone" placeholder="Phone" type="tel">\n' +
-        '    <input name="country" required pattern="\\w*[A-Z]\\w*[A-Z]\\w*" maxlength="2" minlength="2" id="form_country" placeholder="Country" type="text">\n' +
-        '    <input name="email" required pattern="^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$" id="form_email" placeholder="Email" type="email">\n' +
-        '    <input name="password" required pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$" onclick="checkPass(); return false;" id="form_pass" placeholder="Password" type="password">\n' +
-        '    <input required pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$" onclick="checkPass(); return false;" id="form_pass-confirm" placeholder="Confirm password" type="password">\n' +
-        '    <input required id="form_checkbox" type="checkbox">\n' +
-        '    <input id="submit" placeholder="SUBMIT" value="Submit" type="submit">\n' +
+    $('.widgetRegForm').html('<form class="form_widget" id="form_widget" method="post" action="javascript:void(0)">\n' +
+        '<div class="name_wrapper">\n' +
+        '    <input class="input_field" name="firstName" required pattern="^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$" id="form_name" placeholder="Name" type="text">\n' +
+        '    <input class="input_field" name="lastName" required pattern="^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$" id="form_last_name" placeholder="Last Name" type="text">\n' +
+        '</div>\n' +
+        '    <input class="input_field" name="phone" required pattern="^\\d{10}$" minlength="10" id="form_phone" placeholder="Phone" type="tel">\n' +
+        '    <input class="input_field" name="country" required pattern="\\w*[A-Z]\\w*[A-Z]\\w*" maxlength="2" minlength="2" id="form_country" placeholder="Country" type="text">\n' +
+        '    <input class="input_field" name="email" required pattern="^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$" id="form_email" placeholder="Email" type="email">\n' +
+        '<div class="pass_wrapper">\n' +
+        '    <input class="input_field" name="password" required pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$" onclick="checkPass(); return false;" id="form_pass" placeholder="Password" type="password">\n' +
+        '    <input class="input_field" required pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$" onclick="checkPass(); return false;" id="form_pass-confirm" placeholder="Confirm password" type="password">\n' +
+        '</div> \n' +
+        '    <input class="input_field" required id="form_checkbox" type="checkbox">\n' +
+        '    <input class="submit_btn" id="submit" placeholder="SUBMIT" value="Submit" type="submit">\n' +
         '<div id="error-nwl"></div>\n' +
         '<div id="results"></div>' +
         '</form>');
+
+    $('#form_widget input').on('click keyup', function () {
+            console.log($('#form_checkbox').is(':checked'));
+            if ($('#form_name').val() !== "" && $('#form_last_name').val() !== "" && $('#form_email').val() !== "" && $('#form_checkbox').is(':checked') === true
+                && $('#form_pass').val().length >= 6 && $('#form_pass-confirm').val().length >= 6) {
+                console.log($('#form_checkbox').is(':checked'));
+                $('.submit_btn').addClass('active');
+                // $('.form-checker').removeClass('active');
+                $('#submit').click(function () {
+                    // $(this).location.reload(true);
+                    alert('Okay!')
+                })
+            } else {
+                $('.submit_btn').removeClass('active');
+                // $('.form-checker').addClass('active');
+
+            }
+        }
+    );
+
     // '<form class="reg_form" method="POST" id="form_widget" onclick="event.preventDefault()">\n' +
     // '    <div class="name-wrapper">\n' +
     // '        <!--        <label class="lang" key="lang_first-name" for="firstName">Name:</label>-->\n' +

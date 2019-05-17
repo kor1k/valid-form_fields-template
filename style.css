@@ -1,54 +1,60 @@
-/*#form_widget {*/
-/*    display: flex;*/
-/*    justify-content: start;*/
-/*    flex-direction: column;*/
-/*    width: 400px;*/
-/*}*/
-/** {*/
-/*    width: 500px;*/
-/*    margin: 0 auto;*/
-/*}*/
+#form_country {
+    display: none;
+}
 
-/*.reg_form {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    flex-direction: column;*/
-/*    !*width: 385px;*!*/
-/*}*/
+.form_widget {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+}
 
-/*.reg_form > input {*/
-/*    margin: 15px 0 15px 0;*/
-/*    height: 40px;*/
-/*    border-radius: 10px;*/
-/*    border: 1px solid #C0C0C0;*/
-/*    padding-left: 15px;*/
-/*}*/
+.form_widget > .input_field {
+    margin: 10px 0 10px 0;
+    display: flex;
+    border-radius: 7px;
+    border: 1px solid gray;
+    height: 40px;
+    padding-left: 10px;
+}
 
-/*.pass-wrapper {*/
-/*    margin-bottom: 20px;*/
-/*}*/
+.name_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
 
-/*.name-wrapper,*/
-/*.pass-wrapper {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*}*/
+.name_wrapper > input {
+    border-radius: 7px;
+    border: 1px solid gray;
+    height: 40px;
+    padding-left: 10px;
+}
 
-/*.name-wrapper > input,*/
-/*.pass-wrapper > input {*/
-/*    height: 40px;*/
-/*    border-radius: 7px;*/
-/*    border: 1px solid #C0C0C0;*/
-/*    padding-left: 15px;*/
-/*}*/
+.pass_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
 
-/*.form_button {*/
-/*    !*display: none;*!*/
-/*    background-color: #C0C0C0;*/
-/*}*/
+.pass_wrapper > input {
+    border-radius: 7px;
+    border: 1px solid gray;
+    height: 40px;
+    padding-left: 10px;
+}
 
-/*.form_button.active {*/
-/*    background-color: lawngreen;*/
-/*    color: white;*/
-/*    font-weight: 900;*/
-/*}*/
+.submit_btn {
+    display: none;
+!important;
+    border: 1px solid black;
+    background: rebeccapurple;
+    color: white;
+    font-weight: 900;
+}
+
+.submit_btn.active {
+    display: block;
+    border: 1px solid black;
+    background: greenyellow;
+    color: white;
+    font-weight: 900;
+}
