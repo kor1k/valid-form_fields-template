@@ -160,6 +160,7 @@ body {
     display: inline;
     margin: 15px 0 0 0;
 }
+
 .label_checkbox > #form_checkbox {
     margin-right: 15px;
     font-size: 20px;
@@ -217,3 +218,68 @@ body {
     width: 30px;
     /*padding-left: 25px;*/
 }
+
+
+#user_names_icon {
+    position: relative;
+    z-index: 1;
+    left: -35px;
+    top: 12px;
+    color: #7B7B7B;
+    cursor: pointer;
+    width: 0;
+}
+
+#user_names_icon2 {
+    position: relative;
+    z-index: 1;
+    left: -26px;
+    top: 12px;
+    color: #7B7B7B;
+    cursor: pointer;
+    width: 0;
+}
+
+#email_icon {
+    position: absolute;
+    z-index: 1;
+    top: 20.7%;
+    color: #7B7B7B;
+    cursor: pointer;
+    width: 0;
+    background-color: black;
+    left: 22.5%;
+}
+
+#country_icon {
+    position: absolute;
+    left: 85px;
+    color: gray;
+    /*top: 20px;*/
+    bottom: 200px;
+    top: 28.3%;
+}
+
+#phone_icon {
+    position: absolute;
+    color: gray;
+    left: 22.65%;
+    top: 28%;
+}
+
+#key_confirm_input1 {
+    position: absolute;
+    color: gray;
+    position: absolute;
+    color: gray;
+    top: 36%;
+    left: 10.6%;
+}
+
+#key_confirm_input2 {
+    position: absolute;
+    color: gray;
+    top: 36%;
+    left: 22.5%;
+}
+

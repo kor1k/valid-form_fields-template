@@ -1,4 +1,6 @@
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 <title>TEST_FORMS</title>
 <p style="font-weight: 900;color: black; font-size: 30px; ">SANDBOX</p>
@@ -6,26 +8,29 @@
 <form class="form_widget" id="form_widget" method="post">
     <div class="name_wrapper">
         <input class="input_field user_name_input" name="firstName" title="Only letters" required id="form_name"
-               placeholder="First Name" type="text">
-        <input class="input_field user_last-name_input" name="lastName" title="Only letters" required id="form_last_name"
-               placeholder="Last Name" type="text">
+               placeholder="First Name" type="text"><i id="user_names_icon" class="fas fa-user-check"></i>
+        <input class="input_field user_last-name_input" name="lastName" title="Only letters" required
+               id="form_last_name"
+               placeholder="Last Name" type="text"><i id="user_names_icon2" class="fas fa-user-check"></i>
     </div>
     <input class="input_field" name="email" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" id="form_email"
-           placeholder="Email" type="email">
+           placeholder="Email" type="email"><i id="email_icon" class="far fa-envelope"></i>
     <div class="phone_country_wrapper">
         <input class="input_field country_input" value="" name="country" readonly required pattern="\w*[A-Z]\w*[A-Z]\w*"
                title="Only 2 letters code of your country!" maxlength="2" minlength="2" id="form_country"
-               placeholder="Country" type="text">
+               placeholder="Country" type="text"><i id="country_icon" class="fas fa-globe"></i>
         <input class="input_field phone_input" value="" name="phone" required id="form_phone" placeholder="Phone"
-               type="tel">
+               type="tel"><i id="phone_icon" class="fas fa-mobile-alt"></i>
     </div>
     <div class="pass_wrapper">
-        <input class="input_field pass_wrapper_input" name="password" required pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$"
+        <input class="input_field pass_wrapper_input" name="password" required
+               pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$"
                title="Password should contain at least 6 characters with 2 letters" onclick="checkPass(); return false;"
-               id="form_pass" placeholder="Password" type="password">
-        <input class="input_field pass-confirm_wrapper_input" required pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$"
+               id="form_pass" placeholder="Password" type="password"><i id="key_confirm_input1" class="fas fa-key"></i>
+        <input class="input_field pass-confirm_wrapper_input" required
+               pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$"
                onclick="checkPass(); return false;" title="Password should contain at least 6 characters and 2 letters"
-               id="form_pass-confirm" placeholder="Confirm password" type="password">
+               id="form_pass-confirm" placeholder="Confirm password" type="password"><i id="key_confirm_input2" class="fas fa-key"></i>
     </div>
     <label class="label_checkbox"><input required class="form_checkbox_text" id="form_checkbox" type="checkbox"/>Accept
         promotions</label>
@@ -34,7 +39,7 @@
     <div class="load"></div>
     <p id="error_view"></p>
     <p id="link_test_view"></p>
-<!--    <p id="country_test"></p>-->
+    <!--    <p id="country_test"></p>-->
 </form>
 
 <!--<div class="widgetRegForm"></div>-->
