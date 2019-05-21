@@ -7,7 +7,7 @@
     <div class="name_wrapper">
         <input class="input_field user_name_input" name="firstName" title="Only letters" required id="form_name"
                placeholder="First Name" type="text">
-        <input class="input_field user_name_input" name="lastName" title="Only letters" required id="form_last_name"
+        <input class="input_field user_last-name_input" name="lastName" title="Only letters" required id="form_last_name"
                placeholder="Last Name" type="text">
     </div>
     <input class="input_field" name="email" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" id="form_email"
@@ -20,14 +20,14 @@
                type="tel">
     </div>
     <div class="pass_wrapper">
-        <input class="input_field" name="password" required pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$"
+        <input class="input_field pass_wrapper_input" name="password" required pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$"
                title="Password should contain at least 6 characters with 2 letters" onclick="checkPass(); return false;"
                id="form_pass" placeholder="Password" type="password">
-        <input class="input_field" required pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$"
+        <input class="input_field pass-confirm_wrapper_input" required pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$"
                onclick="checkPass(); return false;" title="Password should contain at least 6 characters and 2 letters"
                id="form_pass-confirm" placeholder="Confirm password" type="password">
     </div>
-    <label class="label_checkbox"><input required id="form_checkbox" type="checkbox"/>Accept
+    <label class="label_checkbox"><input required class="form_checkbox_text" id="form_checkbox" type="checkbox"/>Accept
         promotions</label>
     <input class="submit_btn-loader" id="submit" placeholder="SUBMIT" value="Submit" type="submit">
     <div class="results_stroke" id="results"></div>
