@@ -13,7 +13,7 @@
                id="form_last_name"
                placeholder="Last Name" type="text"><i id="user_names_icon2" class="fas fa-user-check"></i>
     </div>
-    <input class="input_field" name="email" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" id="form_email"
+    <input class="input_field email_input" name="email" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" id="form_email"
            placeholder="Email" type="email"><i id="email_icon" class="far fa-envelope"></i>
     <div class="phone_country_wrapper">
         <input class="input_field country_input" value="" name="country" readonly required pattern="\w*[A-Z]\w*[A-Z]\w*"
@@ -26,11 +26,11 @@
         <input class="input_field pass_wrapper_input" name="password" required
                pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$"
                title="Password should contain at least 6 characters with 2 letters" onclick="checkPass(); return false;"
-               id="form_pass" placeholder="Password" type="password"><i id="key_confirm_input1" class="fas fa-key"></i>
+               id="form_pass" placeholder="Password" type="password"><i id="key_pass_input" class="fas fa-key"></i>
         <input class="input_field pass-confirm_wrapper_input" required
                pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$"
                onclick="checkPass(); return false;" title="Password should contain at least 6 characters and 2 letters"
-               id="form_pass-confirm" placeholder="Confirm password" type="password"><i id="key_confirm_input2" class="fas fa-key"></i>
+               id="form_pass-confirm" placeholder="Confirm password" type="password"><i id="key_confirm_pass_input" class="fas fa-key"></i>
     </div>
     <label class="label_checkbox"><input required class="form_checkbox_text" id="form_checkbox" type="checkbox"/>Accept
         promotions</label>
