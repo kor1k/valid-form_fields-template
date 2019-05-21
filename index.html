@@ -1,7 +1,43 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="style.css">
 <title>TEST_FORMS</title>
-<div class="widgetRegForm"></div>
+<p style="font-weight: 900;color: black; font-size: 30px; ">SANDBOX</p>
+
+<form class="form_widget" id="form_widget" method="post">
+    <div class="name_wrapper">
+        <input class="input_field user_name_input" name="firstName" title="Only letters" required id="form_name"
+               placeholder="First Name" type="text">
+        <input class="input_field user_name_input" name="lastName" title="Only letters" required id="form_last_name"
+               placeholder="Last Name" type="text">
+    </div>
+    <input class="input_field" name="email" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" id="form_email"
+           placeholder="Email" type="email">
+    <div class="phone_country_wrapper">
+        <input class="input_field country_input" value="" name="country" readonly required pattern="\w*[A-Z]\w*[A-Z]\w*"
+               title="Only 2 letters code of your country!" maxlength="2" minlength="2" id="form_country"
+               placeholder="Country" type="text">
+        <input class="input_field phone_input" value="" name="phone" required id="form_phone" placeholder="Phone"
+               type="tel">
+    </div>
+    <div class="pass_wrapper">
+        <input class="input_field" name="password" required pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$"
+               title="Password should contain at least 6 characters with 2 letters" onclick="checkPass(); return false;"
+               id="form_pass" placeholder="Password" type="password">
+        <input class="input_field" required pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$"
+               onclick="checkPass(); return false;" title="Password should contain at least 6 characters and 2 letters"
+               id="form_pass-confirm" placeholder="Confirm password" type="password">
+    </div>
+    <label class="label_checkbox"><input required id="form_checkbox" type="checkbox"/>Accept
+        promotions</label>
+    <input class="submit_btn-loader" id="submit" placeholder="SUBMIT" value="Submit" type="submit">
+    <div class="results_stroke" id="results"></div>
+    <div class="load"></div>
+    <p id="error_view"></p>
+    <p id="link_test_view"></p>
+<!--    <p id="country_test"></p>-->
+</form>
+
+<!--<div class="widgetRegForm"></div>-->
 <script>
     var divName = "widgetRegForm";
     var widget = "registration_form"; // widget: login_form, login_shortform;
