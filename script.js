@@ -170,3 +170,194 @@
 //         message.innerHTML = "These passwords don't match";
 //     }
 // }
+
+
+var scriptAdd = document.createElement('script');
+scriptAdd.type = 'text/javascript';
+scriptAdd.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+scriptAdd.integrity = 'sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=';
+scriptAdd.crossOrigin = 'anonymous';
+document.getElementsByTagName('head')[0].appendChild(scriptAdd);
+
+window.addEventListener("load", function () {
+    $('.widgetRegForm').html('');
+
+
+    //API's
+    //https://api.ipdata.co/?api-key=test
+    //http://ip-api.com/json
+
+    //API to take local user ip address
+    // $.getJSON("https://api.ipify.org/?format=json", function (e) {
+    //     var ip = e.ip;
+    //     // console.log('Your ip: (api.ipify)' + ip)
+    // });
+
+    $.getJSON("https://api.ipdata.co/?api-key=test", function (e) {
+        // console.log(e)
+        var country_code = e.country_code;
+        var calling_code = '+' + e.calling_code;
+        // console.log('Your country code: (api.ipdata)' + country_code)
+        $('#calling_code_test').html('Your calling code is: ' + calling_code);
+        $('#country_test').html('Your country code is: ' + country_code);
+        $('#form_phone').val($('#form_phone').val() + calling_code);
+        $('#form_country').val($('#form_country').val() + country_code);
+        // if ($('.phone_input').attr('value') === '') {
+        //     // console.log($('.phone_input').attr('value') == country_code)
+        //     $('.phone_input').html(calling_code);
+        // }
+        // console.log($('.phone_input').attr('value'))
+    });
+
+    $('#submit').click(function () {
+        $('#submit').hide();
+        $('.load').addClass('loading');
+        setTimeout(function () {
+            $('.load').removeClass('loading');
+            $('#submit').show();
+        }, 2000);
+    });
+
+    $("#submit").attr("disabled", true); // disabling button submit
+
+    $('#form_widget input').on('click keyup', function () {
+            // console.log($('#form_checkbox').is(':checked'));
+            if ($('#form_name').val() !== "" && $('#form_last_name').val() !== "" && $('#form_email').val() !== "" && $('#form_checkbox').is(':checked') === true
+                && $('#form_pass').val().length >= 6 && $('#form_pass-confirm').val().length >= 6) {
+                // console.log($('#form_checkbox').is(':checked'));
+                $('.submit_btn-loader').addClass('active');
+                $("#submit").attr("disabled", false); // enable button submit
+                $('#submit').click(function () {
+                    // smth
+                })
+            } else {
+                // submit_btn
+                $('.submit_btn-loader').removeClass('active');
+            }
+        }
+    );
+
+    $('#submit').on('click', function (e) {
+        e.preventDefault();
+        var msg = $('#form_widget').serialize();
+
+        $.ajax({
+            type: 'POST',
+            url: 'https://register.strattonmarkets.com/Lp/LpRegister/st',
+            data: msg,
+            success: function (result) {
+                for (var error in result.error) {
+                    var value = result.error[key];
+                }
+                // var res_data_url = data.url[0];
+                // for (var key_url in res_data_url) {
+                //     var value_url = res_data_url[key_url]
+                // }
+                if (result.data.url !== null) {
+                    $('.greetings-wrapper').addClass('active-greetings');
+                } else {
+                    $('.greetings-wrapper').removeClass('active-greetings');
+                }
+                console.log(result.data.url);
+                $('#error_view').html(value); //showing error message
+                $('#link_test_view').html(result.data.url); //showing link to href for test
+
+                // if (result.error[0] !== null) {
+                //     alert('there is error');
+                //     $('#error_view').html(result.error[0]);
+                //     console.log(result.error[0]);
+                // }
+
+                // for (var error in result.error) {
+                //     var value = result.error[error];
+                // }
+                //
+                // var res_data = result.error[0];
+                // for (var key in res_data) {
+                //     var value2 = res_data[key];
+                // }
+                // // var res_data_url = result.url[0];
+                // // for (var key_url in res_data_url) {
+                // //     var value_url = res_data_url[key_url]
+                // // }
+                // $('#error_view').html(value2); //showing error message
+                // // $('#link_test_view').html(value_url); //showing link to href for test
+                // // alert('Error is: ' + value);
+                // // alert(value);
+                // if (res_data !== null) {
+                //     // $('.results_stroke').addClass('active');
+                //     alert('there is error')
+                // }
+                //
+                //
+                //
+                //
+                // // var res_data_url = data.url[0];
+                // // for (var key_url in res_data_url) {
+                // //     var value_url = res_data_url[key_url]
+                // // }
+                // // if (result.data.url !== null) {
+                // //     alert('LINK IS OK')
+                // // }
+                // console.log(result.data.url);
+                // $('#error_view').html(value); //showing error message
+                // $('#link_test_view').html(result.data.url); //showing link to href for test
+                // let link_redirect = result.data.url;
+
+                function pageRedirect() {
+                    // window.location.href = link_redirect;
+                }
+
+                pageRedirect();
+            },
+            error: function (xhr, str) {
+                alert('Возникла ошибка: ' + xhr.responseCode);
+            }
+
+        });
+        // $("#submit").attr("disabled", true);
+    });
+
+
+});
+
+// setTimeout("pageRedirect()", 10000);
+
+
+// $('#submit').on('click', function (e) {
+//     e.preventDefault();
+//     var msg = $('#form_widget').serialize();
+//     $.ajax({
+//         type: 'POST',
+//         url: 'https://register.strattonmarkets.com/Lp/LpRegister/st',
+//         data: msg,
+//         success: function (data) {
+//             var res_data = data.error[0];
+//             for (var key in res_data) {
+//                 var value = res_data[key];
+//             }
+//             var res_data_url = data.url[0];
+//             for (var key_url in res_data_url) {
+//                 var value_url = res_data_url[key_url]
+//             }
+//             $('#error_view').html(value); //showing error message
+//             $('#link_test_view').html(value_url); //showing link to href for test
+//             // alert('Error is: ' + value);
+//             // alert(value);
+//             if (res_data !== null) {
+//                 // $('.results_stroke').addClass('active');
+//                 alert('there is error')
+//             }
+//             // if (res_data == null) {
+//             //     console.log('u are welcome!!!')
+//             // }
+//             if (res_data_url !== null) {
+//                 alert('link is active')
+//             }
+//         },
+//         error: function (xhr, str) {
+//             alert('Возникла ошибка: ' + xhr.responseCode);
+//         }
+//     });
+//     // $("#submit").attr("disabled", true);
+// });

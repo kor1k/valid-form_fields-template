@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="style.css">
 <title>TEST_FORMS</title>
 <p style="font-weight: 900;color: black; font-size: 30px; ">SANDBOX</p>
-
 <form class="form_widget" id="form_widget" method="post">
     <div class="name_wrapper">
         <input class="input_field user_name_input" name="firstName" title="Only letters" required id="form_name"
@@ -13,7 +12,8 @@
                id="form_last_name"
                placeholder="Last Name" type="text"><i id="user_names_icon2" class="fas fa-user-check"></i>
     </div>
-    <input class="input_field email_input" name="email" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" id="form_email"
+    <input class="input_field email_input" name="email" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+           id="form_email"
            placeholder="Email" type="email"><i id="email_icon" class="far fa-envelope"></i>
     <div class="phone_country_wrapper">
         <input class="input_field country_input" value="" name="country" readonly required pattern="\w*[A-Z]\w*[A-Z]\w*"
@@ -30,17 +30,27 @@
         <input class="input_field pass-confirm_wrapper_input" required
                pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$"
                onclick="checkPass(); return false;" title="Password should contain at least 6 characters and 2 letters"
-               id="form_pass-confirm" placeholder="Confirm password" type="password"><i id="key_confirm_pass_input" class="fas fa-key"></i>
+               id="form_pass-confirm" placeholder="Confirm password" type="password"><i id="key_confirm_pass_input"
+                                                                                        class="fas fa-key"></i>
     </div>
     <label class="label_checkbox"><input required class="form_checkbox_text" id="form_checkbox" type="checkbox"/>Accept
         promotions</label>
     <input class="submit_btn-loader" id="submit" placeholder="SUBMIT" value="Submit" type="submit">
     <div class="results_stroke" id="results"></div>
     <div class="load"></div>
-    <p id="error_view"></p>
     <p id="link_test_view"></p>
-    <!--    <p id="country_test"></p>-->
 </form>
+
+<div class="greetings-wrapper">
+    <div class="greetings-title">Thanks for registration!</div>
+    <div class="greetings-subtitle">You will be redirected on
+        <span class="redirect-website-name">Stratton Markerts</span>
+    </div>
+</div>
+
+<div class="error-view-wrapper">
+    <p id="error_view"></p>
+</div>
 
 <!--<div class="widgetRegForm"></div>-->
 <script>
